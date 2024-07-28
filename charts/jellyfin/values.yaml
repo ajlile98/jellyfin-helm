@@ -151,6 +151,15 @@ mediaVolumes: {}
 #     requests:
 #       storage: 1Ti
 
+# These volumes will be created and mounted
+nfsVolumes: []
+  # - name: pv-nfs-media
+  #   server: 10.0.1.104 
+  #   path: /mnt/user/Media
+  #   readOnly: true
+  #   mountPath: /mnt/media
+
+
 autoscaling:
   enabled: true
   minReplicas: 1

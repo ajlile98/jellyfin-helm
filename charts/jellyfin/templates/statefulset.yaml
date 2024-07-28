@@ -61,9 +61,14 @@ spec:
             - name: {{ include "jellyfin.fullname" $ }}-{{ $name }}
               mountPath: /media/{{ $name }}
             {{- end }}
+            {{- range .Values.nfsVolumes }}
+            - name: {{ .name | quote}}
+              mountPath: {{ .mountPath | quote }}
+            {{- end }}
             # See note below why we need to do this
             - name: tmpfs
               mountPath: /tmp
+            
       {{- with .Values.nodeSelector }}
       nodeSelector: {{- toYaml . | nindent 8 }}
       {{- end }}
@@ -87,6 +92,14 @@ spec:
             claimName: {{ $claim.existingClaim }}
           {{- end }}
         {{- end }}
+        {{- range .Values.nfsVolumes }}
+        - name: {{ .name | quote }}
+          nfs:
+            server: {{ .server | quote }} 
+            path: {{ .path }} 
+            readOnly: {{ .readOnly }}
+        {{- end}}
+
   volumeClaimTemplates:
   {{- range $name, $claim := .Values.persistence }}
     - metadata:
