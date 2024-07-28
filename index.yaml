@@ -3,6 +3,16 @@ entries:
   jellyfin:
   - apiVersion: v2
     appVersion: 10.9.2
+    created: "2024-07-28T07:07:19.641816115Z"
+    description: A Helm chart for Kubernetes
+    digest: c51c1046f46ee9c9c157495e8d58d57fe048fe51b5a8496975dd67de12667d07
+    name: jellyfin
+    type: application
+    urls:
+    - https://github.com/ajlile98/jellyfin-helm/releases/download/jellyfin-0.3.2/jellyfin-0.3.2.tgz
+    version: 0.3.2
+  - apiVersion: v2
+    appVersion: 10.9.2
     created: "2024-05-26T22:30:34.58097038Z"
     description: A Helm chart for Kubernetes
     digest: e41bde9b22fad764705c692e9cf1314f8742b4c75f8f2f0640a86ddd0481f90c
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://github.com/cfis/jellyfin-helm/releases/download/jellyfin-0.3.0/jellyfin-0.3.0.tgz
     version: 0.3.0
-generated: "2024-05-26T22:30:34.580977593Z"
+generated: "2024-07-28T07:07:19.641828999Z"
